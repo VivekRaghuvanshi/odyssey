@@ -27,12 +27,12 @@ export function JournalCard({ article, variant = 0 }: { article: JournalArticle;
         />
       </div>
       <div>
-        <p className="text-xs font-medium uppercase tracking-[0.2em] text-stone-400">
+        <p className="text-xs font-medium uppercase tracking-[0.2em] text-stone-500 dark:text-stone-400">
           {article.category} · {article.readTime}
         </p>
-        <h3 className="mt-2 font-display text-2xl leading-snug transition-colors group-hover:text-clay">
+        <h2 className="mt-2 font-display text-2xl leading-snug transition-colors group-hover:text-clay">
           {article.title}
-        </h3>
+        </h2>
         <p className="mt-2 text-sm text-stone-500">{article.excerpt}</p>
       </div>
     </Link>

@@ -1,8 +1,9 @@
-import type { ContinentSlug, MapPoint } from "./destination";
+import type { ContinentSlug, LngLat } from "./destination";
 
 export type Continent = {
   slug: ContinentSlug;
   name: string;
   blurb: string;
-  node: MapPoint;
+  center: LngLat;
+  zoom: number;
 };

@@ -33,8 +33,8 @@ export type ArtMotif =
   | "aurora"
   | "city";
 
-/** Percentage position on the shared 0–100 stylized world canvas (not literal geography). */
-export type MapPoint = { x: number; y: number };
+/** [longitude, latitude], matching MapLibre's coordinate order. */
+export type LngLat = [number, number];
 
 export type GalleryImage = {
   id: string;
@@ -58,7 +58,7 @@ export type Destination = {
   season: Season[];
   travelStyle: TravelStyle[];
   tags: string[];
-  coordinates: MapPoint;
+  coordinates: LngLat;
   palette: [string, string];
   motif: ArtMotif;
   gallery: GalleryImage[];

@@ -1,8 +1,8 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import dynamic from "next/dynamic";
 import { Search as SearchIcon, X } from "lucide-react";
-import { WorldMap } from "@/components/map/WorldMap";
 import { DestinationGrid } from "./DestinationGrid";
 import { continents } from "@/data/continents";
 import {
@@ -17,6 +17,16 @@ import type {
   Season,
   TravelStyle,
 } from "@/types/destination";
+
+const WorldMap = dynamic(
+  () => import("@/components/map/WorldMap").then((mod) => mod.WorldMap),
+  {
+    ssr: false,
+    loading: () => (
+      <div className="aspect-[16/10] w-full animate-pulse rounded-2xl bg-stone-100 dark:bg-stone-800" />
+    ),
+  },
+);
 
 const climates: Climate[] = [
   "temperate",
@@ -132,18 +142,12 @@ export function DestinationExplorer({
 
   return (
     <div className="flex flex-col gap-10">
-      {showMap && (
-        <WorldMap
-          selected={continent}
-          onSelect={handleContinentSelect}
-          counts={counts}
-        />
-      )}
+      {showMap && <WorldMap destinations={results} />}
 
       <div className="flex flex-col gap-6">
         <div className="relative">
           <SearchIcon
-            className="pointer-events-none absolute left-4 top-1/2 size-4 -translate-y-1/2 text-stone-400"
+            className="pointer-events-none absolute left-4 top-1/2 size-4 -translate-y-1/2 text-stone-500 dark:text-stone-400"
             aria-hidden="true"
           />
           <input

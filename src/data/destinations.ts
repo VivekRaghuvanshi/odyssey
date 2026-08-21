@@ -20,7 +20,7 @@ export const destinations: Destination[] = [
     season: ["spring", "autumn"],
     travelStyle: ["culture", "food", "photography"],
     tags: ["temples", "cherry blossoms", "cities", "mountains", "trains"],
-    coordinates: { x: 82, y: 32 },
+    coordinates: [139.6917, 35.6895],
     palette: ["#3d2b2e", "#e8b4bc"],
     motif: "mountains",
     gallery: [
@@ -51,7 +51,7 @@ export const destinations: Destination[] = [
     season: ["winter", "spring"],
     travelStyle: ["culture", "adventure", "food"],
     tags: ["heritage", "spice", "mountains", "rivers", "festivals"],
-    coordinates: { x: 70, y: 42 },
+    coordinates: [77.209, 28.6139],
     palette: ["#5c2018", "#e8935c"],
     motif: "city",
     gallery: [
@@ -82,7 +82,7 @@ export const destinations: Destination[] = [
     season: ["spring", "summer", "autumn"],
     travelStyle: ["culture", "food", "luxury"],
     tags: ["coastline", "art", "history", "wine", "cities"],
-    coordinates: { x: 53, y: 30 },
+    coordinates: [12.4964, 41.9028],
     palette: ["#2c3a4a", "#d9a441"],
     motif: "city",
     gallery: [
@@ -113,7 +113,7 @@ export const destinations: Destination[] = [
     season: ["summer"],
     travelStyle: ["nature", "adventure", "photography"],
     tags: ["glaciers", "aurora", "volcanoes", "waterfalls", "hot springs"],
-    coordinates: { x: 45, y: 14 },
+    coordinates: [-21.9426, 64.1466],
     palette: ["#1c2b33", "#8fb8c9"],
     motif: "aurora",
     gallery: [
@@ -144,7 +144,7 @@ export const destinations: Destination[] = [
     season: ["summer", "winter"],
     travelStyle: ["nature", "adventure", "photography"],
     tags: ["fjords", "aurora", "islands", "hiking", "midnight sun"],
-    coordinates: { x: 53, y: 15 },
+    coordinates: [10.7522, 59.9139],
     palette: ["#16222a", "#5c8a7a"],
     motif: "aurora",
     gallery: [
@@ -175,7 +175,7 @@ export const destinations: Destination[] = [
     season: ["summer", "winter"],
     travelStyle: ["nature", "luxury", "adventure"],
     tags: ["alps", "lakes", "skiing", "trains", "villages"],
-    coordinates: { x: 52, y: 27 },
+    coordinates: [7.4474, 46.948],
     palette: ["#22303c", "#c7d3d4"],
     motif: "mountains",
     gallery: [
@@ -206,7 +206,7 @@ export const destinations: Destination[] = [
     season: ["spring", "autumn"],
     travelStyle: ["culture", "adventure", "food"],
     tags: ["desert", "markets", "coastline", "mountains", "craft"],
-    coordinates: { x: 48, y: 38 },
+    coordinates: [-7.9811, 31.6295],
     palette: ["#5a2e1c", "#d99a3e"],
     motif: "dunes",
     gallery: [
@@ -237,7 +237,7 @@ export const destinations: Destination[] = [
     season: ["spring", "autumn"],
     travelStyle: ["nature", "adventure", "luxury"],
     tags: ["safari", "coastline", "mountains", "wine", "wildlife"],
-    coordinates: { x: 55, y: 68 },
+    coordinates: [18.4241, -33.9249],
     palette: ["#3b2a1e", "#c98a4b"],
     motif: "waves",
     gallery: [
@@ -268,7 +268,7 @@ export const destinations: Destination[] = [
     season: ["summer", "autumn"],
     travelStyle: ["nature", "adventure", "photography"],
     tags: ["mountains", "lakes", "forests", "wildlife", "cities"],
-    coordinates: { x: 22, y: 18 },
+    coordinates: [-75.6972, 45.4215],
     palette: ["#1b2e28", "#8faa8a"],
     motif: "forest",
     gallery: [
@@ -299,7 +299,7 @@ export const destinations: Destination[] = [
     season: ["winter"],
     travelStyle: ["adventure", "culture", "nature"],
     tags: ["rainforest", "beaches", "music", "waterfalls", "coastline"],
-    coordinates: { x: 32, y: 58 },
+    coordinates: [-43.1729, -22.9068],
     palette: ["#204030", "#7cb36a"],
     motif: "forest",
     gallery: [
@@ -330,7 +330,7 @@ export const destinations: Destination[] = [
     season: ["spring", "autumn"],
     travelStyle: ["adventure", "nature", "photography"],
     tags: ["reef", "desert", "coastline", "wildlife", "outback"],
-    coordinates: { x: 83, y: 72 },
+    coordinates: [151.2093, -33.8688],
     palette: ["#4a2a1a", "#d97b4f"],
     motif: "dunes",
     gallery: [
@@ -361,7 +361,7 @@ export const destinations: Destination[] = [
     season: ["summer"],
     travelStyle: ["nature", "adventure", "photography"],
     tags: ["fjords", "mountains", "coastline", "hiking", "geothermal"],
-    coordinates: { x: 90, y: 78 },
+    coordinates: [168.6626, -45.0312],
     palette: ["#1c3327", "#79a86e"],
     motif: "waves",
     gallery: [

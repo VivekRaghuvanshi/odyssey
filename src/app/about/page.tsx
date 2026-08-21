@@ -35,7 +35,7 @@ export default function AboutPage() {
   return (
     <main id="main-content" className="flex flex-1 flex-col px-6 pb-24 pt-32 sm:px-10">
       <div className="mx-auto w-full max-w-3xl">
-        <p className="text-sm font-medium uppercase tracking-[0.3em] text-stone-400">
+        <p className="text-sm font-medium uppercase tracking-[0.3em] text-stone-500 dark:text-stone-400">
           About
         </p>
         <h1 className="mt-4 font-display text-4xl leading-tight tracking-tight sm:text-6xl">

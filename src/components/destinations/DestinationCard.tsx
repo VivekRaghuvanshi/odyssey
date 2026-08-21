@@ -36,9 +36,9 @@ export function DestinationCard({ destination, variant = 0 }: DestinationCardPro
         <p className="text-[11px] font-medium uppercase tracking-[0.2em] text-paper/70">
           {destination.continent.replace("-", " ")}
         </p>
-        <h3 className="font-display text-2xl leading-tight">
+        <h2 className="font-display text-2xl leading-tight">
           {destination.country}
-        </h3>
+        </h2>
         <p className="max-h-0 overflow-hidden text-xs text-paper/80 opacity-0 transition-all duration-500 ease-out group-hover:max-h-12 group-hover:opacity-100">
           {destination.tagline}
         </p>

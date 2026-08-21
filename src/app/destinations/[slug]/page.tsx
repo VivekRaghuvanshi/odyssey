@@ -5,7 +5,7 @@ import { CompanionTrigger } from "@/components/companion/CompanionTrigger";
 import { DestinationHero } from "@/components/destinations/DestinationHero";
 import { EditorialSection } from "@/components/destinations/EditorialSection";
 import { DestinationGallery } from "@/components/destinations/DestinationGallery";
-import { LocationMap } from "@/components/map/LocationMap";
+import { LocationMapLoader } from "@/components/map/LocationMapLoader";
 import { EditorialArt } from "@/components/ui/EditorialArt";
 import { Reveal } from "@/components/animations/Reveal";
 import { CtaLink } from "@/components/ui/CtaLink";
@@ -62,7 +62,7 @@ export default async function DestinationPage({ params }: PageProps) {
 
       <section className="border-t border-stone-200 px-6 py-16 dark:border-stone-800 sm:px-10">
         <Reveal className="mx-auto max-w-6xl">
-          <h2 className="text-xs font-medium uppercase tracking-[0.3em] text-stone-400">
+          <h2 className="text-xs font-medium uppercase tracking-[0.3em] text-stone-500 dark:text-stone-400">
             04 — Landscapes
           </h2>
           <div className="mt-6 grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-5">
@@ -85,7 +85,7 @@ export default async function DestinationPage({ params }: PageProps) {
 
       <section className="border-t border-stone-200 px-6 py-16 dark:border-stone-800 sm:px-10">
         <Reveal className="mx-auto max-w-6xl">
-          <h2 className="text-xs font-medium uppercase tracking-[0.3em] text-stone-400">
+          <h2 className="text-xs font-medium uppercase tracking-[0.3em] text-stone-500 dark:text-stone-400">
             05 — Experiences
           </h2>
           <div className="mt-6">
@@ -96,11 +96,11 @@ export default async function DestinationPage({ params }: PageProps) {
 
       <section className="border-t border-stone-200 px-6 py-16 dark:border-stone-800 sm:px-10">
         <Reveal className="mx-auto max-w-6xl">
-          <h2 className="text-xs font-medium uppercase tracking-[0.3em] text-stone-400">
+          <h2 className="text-xs font-medium uppercase tracking-[0.3em] text-stone-500 dark:text-stone-400">
             Where it sits
           </h2>
           <div className="mt-6">
-            <LocationMap destination={destination} />
+            <LocationMapLoader destination={destination} />
           </div>
         </Reveal>
       </section>

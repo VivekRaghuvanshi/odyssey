@@ -67,7 +67,7 @@ export default async function JournalArticlePage({ params }: PageProps) {
 
         {related.length > 0 && (
           <div className="mx-auto mt-16 flex max-w-2xl flex-wrap gap-3 border-t border-stone-200 pt-8 dark:border-stone-800">
-            <span className="text-xs font-medium uppercase tracking-[0.2em] text-stone-400">
+            <span className="text-xs font-medium uppercase tracking-[0.2em] text-stone-500 dark:text-stone-400">
               Mentioned:
             </span>
             {related.map((d) => (
