@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { EditorialArt } from "@/components/ui/EditorialArt";
+import { DestinationMedia } from "@/components/ui/DestinationMedia";
 import { Reveal } from "@/components/animations/Reveal";
 import { getAllArticles, getArticleBySlug } from "@/lib/journal";
 import { getDestinationBySlug } from "@/lib/destinations";
@@ -37,8 +38,6 @@ export default async function JournalArticlePage({ params }: PageProps) {
   if (!article) notFound();
 
   const linked = getDestinationBySlug(article.destinationSlugs[0] ?? "");
-  const palette = linked?.palette ?? fallbackPalette;
-  const motif = linked?.motif ?? fallbackMotif;
   const related = article.destinationSlugs
     .map((s) => getDestinationBySlug(s))
     .filter((d) => d !== undefined);
@@ -46,7 +45,22 @@ export default async function JournalArticlePage({ params }: PageProps) {
   return (
     <main id="main-content" className="flex flex-1 flex-col">
       <section className="relative flex min-h-[60vh] flex-col justify-end px-6 pb-16 pt-32 text-paper sm:px-10">
-        <EditorialArt palette={palette} motif={motif} className="absolute inset-0 -z-10" />
+        {linked ? (
+          <DestinationMedia
+            destination={linked}
+            alt={article.title}
+            decorative
+            priority
+            sizes="100vw"
+            className="absolute inset-0 -z-10"
+          />
+        ) : (
+          <EditorialArt
+            palette={fallbackPalette}
+            motif={fallbackMotif}
+            className="absolute inset-0 -z-10"
+          />
+        )}
         <div className="absolute inset-0 -z-10 bg-gradient-to-t from-ink via-ink/40 to-ink/40" />
         <div className="mx-auto w-full max-w-3xl">
           <p className="text-sm font-medium uppercase tracking-[0.3em] text-paper/70">

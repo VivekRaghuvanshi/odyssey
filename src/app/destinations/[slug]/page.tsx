@@ -6,7 +6,7 @@ import { DestinationHero } from "@/components/destinations/DestinationHero";
 import { EditorialSection } from "@/components/destinations/EditorialSection";
 import { DestinationGallery } from "@/components/destinations/DestinationGallery";
 import { LocationMapLoader } from "@/components/map/LocationMapLoader";
-import { EditorialArt } from "@/components/ui/EditorialArt";
+import { DestinationMedia } from "@/components/ui/DestinationMedia";
 import { Reveal } from "@/components/animations/Reveal";
 import { CtaLink } from "@/components/ui/CtaLink";
 import { getAllDestinations, getDestinationBySlug } from "@/lib/destinations";
@@ -69,10 +69,13 @@ export default async function DestinationPage({ params }: PageProps) {
             {destination.highlights.map((place, i) => (
               <div key={place} className="flex flex-col gap-2">
                 <div className="aspect-square overflow-hidden rounded-xl">
-                  <EditorialArt
-                    palette={destination.palette}
-                    motif={destination.motif}
+                  <DestinationMedia
+                    destination={destination}
+                    imageId={destination.gallery[i % destination.gallery.length]?.id}
+                    alt={place}
+                    decorative
                     variant={i + 4}
+                    sizes="(min-width: 768px) 20vw, 33vw"
                     className="h-full w-full"
                   />
                 </div>

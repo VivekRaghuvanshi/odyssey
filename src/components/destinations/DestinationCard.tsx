@@ -1,14 +1,15 @@
 import Link from "next/link";
-import { EditorialArt } from "@/components/ui/EditorialArt";
+import { DestinationMedia } from "@/components/ui/DestinationMedia";
 import { FavoriteButton } from "@/components/ui/FavoriteButton";
 import type { Destination } from "@/types/destination";
 
 type DestinationCardProps = {
   destination: Destination;
   variant?: number;
+  priority?: boolean;
 };
 
-export function DestinationCard({ destination, variant = 0 }: DestinationCardProps) {
+export function DestinationCard({ destination, variant = 0, priority = false }: DestinationCardProps) {
   return (
     <Link
       href={`/destinations/${destination.slug}`}
@@ -16,10 +17,13 @@ export function DestinationCard({ destination, variant = 0 }: DestinationCardPro
       className="group relative block aspect-[4/5] overflow-hidden rounded-2xl"
     >
       <div className="absolute inset-0 transition-transform duration-700 ease-out group-hover:scale-110">
-        <EditorialArt
-          palette={destination.palette}
-          motif={destination.motif}
+        <DestinationMedia
+          destination={destination}
+          alt={destination.country}
+          decorative
           variant={variant}
+          priority={priority}
+          sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
           className="h-full w-full"
         />
       </div>

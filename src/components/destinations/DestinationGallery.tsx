@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { EditorialArt } from "@/components/ui/EditorialArt";
+import { DestinationMedia } from "@/components/ui/DestinationMedia";
 import { Lightbox } from "./Lightbox";
 import type { Destination } from "@/types/destination";
 
@@ -25,11 +25,12 @@ export function DestinationGallery({ destination }: { destination: Destination }
             onClick={() => setOpenIndex(i)}
             className={`mb-4 block w-full break-inside-avoid overflow-hidden rounded-xl ${aspectClass[image.aspect]}`}
           >
-            <EditorialArt
-              palette={destination.palette}
-              motif={destination.motif}
+            <DestinationMedia
+              destination={destination}
+              imageId={image.id}
+              alt={image.caption}
               variant={i + 2}
-              label={image.caption}
+              sizes="(min-width: 768px) 33vw, 50vw"
               className="h-full w-full transition-transform duration-500 hover:scale-105"
             />
           </button>
@@ -37,9 +38,8 @@ export function DestinationGallery({ destination }: { destination: Destination }
       </div>
 
       <Lightbox
+        destination={destination}
         images={destination.gallery}
-        palette={destination.palette}
-        motif={destination.motif}
         openIndex={openIndex}
         onClose={() => setOpenIndex(null)}
         onNavigate={setOpenIndex}

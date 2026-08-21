@@ -3,22 +3,21 @@
 import { useEffect, useRef } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
-import { EditorialArt } from "@/components/ui/EditorialArt";
-import type { ArtMotif, GalleryImage } from "@/types/destination";
+import { DestinationMedia } from "@/components/ui/DestinationMedia";
+import { getDestinationImage } from "@/lib/images";
+import type { Destination, GalleryImage } from "@/types/destination";
 
 type LightboxProps = {
+  destination: Destination;
   images: GalleryImage[];
-  palette: [string, string];
-  motif: ArtMotif;
   openIndex: number | null;
   onClose: () => void;
   onNavigate: (index: number) => void;
 };
 
 export function Lightbox({
+  destination,
   images,
-  palette,
-  motif,
   openIndex,
   onClose,
   onNavigate,
@@ -95,11 +94,12 @@ export function Lightbox({
             transition={{ duration: 0.25 }}
             className="aspect-[4/3] w-full max-w-3xl overflow-hidden rounded-2xl"
           >
-            <EditorialArt
-              palette={palette}
-              motif={motif}
+            <DestinationMedia
+              destination={destination}
+              imageId={images[openIndex].id}
+              alt={images[openIndex].caption}
               variant={openIndex + 2}
-              label={images[openIndex].caption}
+              sizes="(min-width: 768px) 768px, 100vw"
               className="h-full w-full"
             />
           </motion.div>
@@ -115,6 +115,24 @@ export function Lightbox({
 
           <p className="absolute bottom-6 text-sm text-paper/70">
             {images[openIndex].caption} — {openIndex + 1} / {images.length}
+            {(() => {
+              const photo = getDestinationImage(destination.slug, images[openIndex].id);
+              if (!photo) return null;
+              return (
+                <>
+                  {" "}
+                  ·{" "}
+                  <a
+                    href={photo.pexelsUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="underline underline-offset-2 hover:text-paper"
+                  >
+                    Photo by {photo.photographer}
+                  </a>
+                </>
+              );
+            })()}
           </p>
         </motion.div>
       )}

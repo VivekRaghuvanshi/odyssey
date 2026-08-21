@@ -25,7 +25,12 @@ export default function JournalPage() {
 
         <div className="mt-16 grid grid-cols-1 gap-x-8 gap-y-12 sm:grid-cols-2">
           {articles.map((article, i) => (
-            <JournalCard key={article.id} article={article} variant={i} />
+            <JournalCard
+              key={article.id}
+              article={article}
+              variant={i}
+              priority={i === 0}
+            />
           ))}
         </div>
       </div>

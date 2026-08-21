@@ -1,4 +1,4 @@
-import { EditorialArt } from "@/components/ui/EditorialArt";
+import { DestinationMedia } from "@/components/ui/DestinationMedia";
 import { FavoriteButton } from "@/components/ui/FavoriteButton";
 import { Parallax } from "@/components/animations/Parallax";
 import type { Destination } from "@/types/destination";
@@ -7,9 +7,12 @@ export function DestinationHero({ destination }: { destination: Destination }) {
   return (
     <section className="relative flex min-h-[85vh] flex-col justify-end overflow-hidden px-6 pb-16 pt-32 text-paper sm:px-10">
       <Parallax className="absolute inset-0 -z-10" strength={40}>
-        <EditorialArt
-          palette={destination.palette}
-          motif={destination.motif}
+        <DestinationMedia
+          destination={destination}
+          alt={destination.country}
+          decorative
+          priority
+          sizes="100vw"
           className="h-[120%] w-full"
         />
       </Parallax>

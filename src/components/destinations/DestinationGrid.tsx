@@ -33,6 +33,7 @@ export function DestinationGrid({ destinations, emptyHint }: DestinationGridProp
           key={destination.id}
           destination={destination}
           variant={i}
+          priority={i === 0}
         />
       ))}
     </div>
